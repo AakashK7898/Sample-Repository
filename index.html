@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Samgatha 2018</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="/script.js" defer></script>
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+   <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+     <script src="https://unpkg.com/aframe-animation-component@3.2.1/dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  
+  <body>
+     <a-scene >
+       
+       <!--Assets-->
+       <a-assets>
+         <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+       <a-asset-item id="exoItalicFont" src="https://cdn.glitch.com/c719c986-c0c5-48b8-967c-3cd8b8aa17f3%2Fexo2BlackItalic.typeface.json?1490305922725"></a-asset-item>
+       </a-assets>
+       
+       <!--Samgatha Text-->
+       
+       <a-entity text-geometry="value:Samgatha 2018; font: #exoItalicFont" position="-2.6 2 -10" scale="1.5 1.8 1.6" 
+                 material="color:#EC407A ; metalness: 1.5; roughness:0.3; shader:flat"          >
+         <a-animation attribute="material.color" from="#E91E63" to="#FFC400" dur="5000" direction="alternate" repeat="indefinite"></a-animation>
+       </a-entity>
+        
+       <!--Coming Soon text-->
+       <a-entity text-geometry="value: Coming Soon!;  font: #optimerBoldFont" position="-2 3.6 -11" scale="1.5 1.8 1.7"
+                 material="color:#EFEBE9; metalness: 0.2; roughness: 0.1 ">
+       </a-entity>
+       
+       <!--Add a GLTF Model-->
+       <a-entity>
+       <a-gltf-model position="2 -4.5 -10" src="https://cdn.rawgit.com/AakashK7898/Sample-Repository/67e55dd6/scene.gltf"></a-gltf-model>  
+         <a-animation attribute="position" from="2 -4.5 -13" to="2 -3.8 -13" dur="2000" direction="alternate" repeat="indefinite" easing="linear"></a-animation>
+       </a-entity>
+       
+       <!--Lights-->
+       <a-entity position="-5 -2 -8" rotation="140 -6 30" light="type:directional ; color: #FFCC80; intensity: 2" ></a-entity>
+       
+       <!--Environment-->
+      <a-entity position="2 -40 -5" rotation="0 0 0" environment="preset: starry; numDressing: 30"></a-entity>
+       
+       <!--Camera and Cursor-->
+    <!--Navigation through Arrow & WASD keys-->
+    <a-entity camera look-controls wasd-controls>
+    <a-cursor>
+    </a-cursor>
+    </a-entity>
+       
+    </a-scene>
+  </body>
+</html>
